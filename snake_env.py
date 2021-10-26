@@ -8,7 +8,10 @@ Created on Sat Dec 19 20:08:42 2020
 import pygame as pygame
 import time
 import random
+import os
 
+curr_path = os.getcwd()
+print(curr_path)
 pygame.init()
 
 # Colors
@@ -24,9 +27,9 @@ x = 500
 y = 500
 
 # Pictures used for joke version of game
-ol = pygame.image.load('ol.jpg')
-michael = pygame.image.load('michael.png')
-karsten = pygame.image.load('karsten.png')
+ol = pygame.image.load(f'{curr_path}/pictures/ol.jpg')
+michael = pygame.image.load(f'{curr_path}/pictures/michael.png')
+karsten = pygame.image.load(f'{curr_path}/pictures/karsten.png')
 
 # Resize pictures
 michael = pygame.transform.scale(michael, (50, 50))
@@ -96,7 +99,8 @@ superchargedY = False
 game_on = True
 
 def play_game():
-    while game_on == True:
+    #while game_on == True:
+    #    pass
     
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
